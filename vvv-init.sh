@@ -23,5 +23,5 @@ if ! $(wp core is-installed --path="${VVV_PATH_TO_SITE}/public_html" --allow-roo
   wp core install --url="${VVV_SITE_NAME}.test" --quiet --title="${VVV_SITE_NAME}" --admin_name=admin --admin_email="admin@${VVV_SITE_NAME}.test" --admin_password="password" --allow-root
 else
   wp core update --allow-root
+  wp core update-db --allow-root
 fi
-

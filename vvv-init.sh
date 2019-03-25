@@ -21,19 +21,19 @@ if ! $(wp core is-installed --path="${VVV_PATH_TO_SITE}/public_html" --allow-roo
   wp core download --path="${VVV_PATH_TO_SITE}/public_html" --allow-root
   wp core config --dbname="${VVV_SITE_NAME}" --dbuser=wp --dbpass=wp --quiet --allow-root
   wp core install --url="${VVV_SITE_NAME}.test" --quiet --title="${VVV_SITE_NAME}" --admin_name=admin --admin_email="admin@${VVV_SITE_NAME}.test" --admin_password="password" --allow-root
-  wp site empty --uploads --yes
-  wp plugin delete hello
-  wp plugin delete hello-dolly
-  wp config set WP_DEBUG true --raw --add
-  wp config set WP_DEBUG_LOG true --raw --add
-  wp config set WP_DEBUG_DISPLAY false --raw --add
-  wp config set SAVEQUERIES true --raw --add
-  wp config set FORCE_SSL_ADMIN true --raw --add
-  wp config set JETPACK_DEV_DEBUG true --raw --add
-  wp plugin install jetpack --activate
-  wp plugin install debug-bar --activate
-  wp plugin install wordpress-importer --activate
-  wp plugin install post-meta-inspector --activate
+  wp site empty --uploads --yes --allow-root
+  wp plugin delete hello --allow-root
+  wp plugin delete hello-dolly --allow-root
+  wp config set WP_DEBUG true --raw --add --allow-root
+  wp config set WP_DEBUG_LOG true --raw --add --allow-root
+  wp config set WP_DEBUG_DISPLAY false --raw --add --allow-root
+  wp config set SAVEQUERIES true --raw --add --allow-root
+  wp config set FORCE_SSL_ADMIN true --raw --add --allow-root
+  wp config set JETPACK_DEV_DEBUG true --raw --add --allow-root
+  wp plugin install jetpack --activate --allow-root
+  wp plugin install debug-bar --activate --allow-root
+  wp plugin install wordpress-importer --activate --allow-root
+  wp plugin install post-meta-inspector --activate --allow-root
 else
   wp core update --allow-root
   wp core update-db --allow-root

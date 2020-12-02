@@ -25,13 +25,15 @@ if ! $(wp core is-installed --path="${VVV_PATH_TO_SITE}/public_html" --allow-roo
   wp plugin delete hello --allow-root
   wp plugin delete hello-dolly --allow-root
   wp config set WP_DEBUG true --raw --add --allow-root
+  wp config set SCRIPT_DEBUG true --raw --add --allow-root
   wp config set WP_DEBUG_LOG true --raw --add --allow-root
   wp config set WP_DEBUG_DISPLAY false --raw --add --allow-root
   wp config set SAVEQUERIES true --raw --add --allow-root
   wp config set FORCE_SSL_ADMIN true --raw --add --allow-root
   wp config set JETPACK_DEV_DEBUG true --raw --add --allow-root
   wp plugin install jetpack --activate --allow-root
-  wp plugin install debug-bar --activate --allow-root
+  wp plugin install query-monitor --activate --allow-root
+  wp plugin install debug-bar --allow-root
   wp plugin install wordpress-importer --activate --allow-root
   wp plugin install post-meta-inspector --activate --allow-root
 else
